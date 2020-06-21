@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/car_rental</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Luxal.99</property>
+
+        <mapping class="sample.entity.Client"/>
+        <mapping class="sample.entity.User"/>
+        <mapping class="sample.entity.Admin"/>
+        <mapping class="sample.entity.Vehicle"/>
+        <mapping class="sample.entity.CarBrand"/>
+        <mapping class="sample.entity.BikeModel"/>
+        <mapping class="sample.entity.Reservation"/>
+        <mapping class="sample.entity.Role"/>
+
+        <!-- <mapping resource="bean/User.hbm.xml" /> -->
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="byte-buddy-dep-1.10.10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/byte-buddy-dep-1.10.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsoup-1.13.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

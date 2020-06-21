@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="extras">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/integrationguide/chapters/services/extras" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/integrationguide/chapters/services/extras/extend" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/integrationguide/chapters/services/extras/override" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/quickstart/tutorials/annotations/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/quickstart/tutorials/basic/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/quickstart/tutorials/entitymanager/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/quickstart/tutorials/envers/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/quickstart/tutorials/osgi/managed-jpa/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/quickstart/tutorials/osgi/unmanaged-jpa/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/asciidoc/quickstart/tutorials/osgi/unmanaged-native/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/documentation/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/hibernate-c3p0/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/hibernate-c3p0/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/hibernate-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/hibernate-core/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/tooling/hibernate-enhance-maven-plugin/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/tooling/hibernate-enhance-maven-plugin/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/tooling/hibernate-gradle-plugin/src/main/groovy" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/tooling/metamodel-generator/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hibernate-release-5.4.17.Final/project/tooling/metamodel-generator/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
