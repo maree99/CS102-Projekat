@@ -47,8 +47,8 @@ public class ClientPanel extends Application {
 
     TableColumn brandTC = new TableColumn("Brand");
     TableColumn modelTC = new TableColumn("Model");
-    TableColumn yearTC = new TableColumn("Year");
-    TableColumn registrationTC = new TableColumn("Registration");
+    TableColumn powerTC = new TableColumn("Power");
+    TableColumn priceTC = new TableColumn("Price");
     Button news = new Button("News");
 
     Button countPriceBtn = new Button("Izracunaj cenu");
@@ -77,24 +77,22 @@ public class ClientPanel extends Application {
         hBox.setPadding(new javafx.geometry.Insets(10, 10, 10, 10));
         hBox.setSpacing(10);
 
-        vBox.getChildren().addAll(txt, ukupanIznos, bikeTableView, rezervisi,izracunajCenu);
+        vBox.getChildren().addAll(txt, ukupanIznos, bikeTableView, izracunajCenu, rezervisi);
         vBox.setPadding(new javafx.geometry.Insets(10, 10, 10, 10));
         vBox.setSpacing(10);
 
 
-
-        bikeTableView.getColumns().addAll(brandTC, modelTC, yearTC, registrationTC);
+        bikeTableView.getColumns().addAll(brandTC, modelTC, powerTC, priceTC);
         bikeTableView.setPrefWidth(500);
 
         ObservableList<VehicleDTO> vehicleDTOList = VehicleDAO.getAllVehicleDTO();
         bikeTableView.setItems(vehicleDTOList);
 
 
-
         brandTC.setCellValueFactory(new PropertyValueFactory<>("bikeBrandTitle"));
         modelTC.setCellValueFactory(new PropertyValueFactory<>("bikeModelTitle"));
-        yearTC.setCellValueFactory(new PropertyValueFactory<>("power"));
-        registrationTC.setCellValueFactory(new PropertyValueFactory<>("pricePerDay"));
+        powerTC.setCellValueFactory(new PropertyValueFactory<>("power"));
+        priceTC.setCellValueFactory(new PropertyValueFactory<>("pricePerDay"));
 
         pane.setTop(hBox);
         pane.setLeft(vBox);
@@ -122,18 +120,20 @@ public class ClientPanel extends Application {
             reservation.setEndDate(endDate.getValue().toString());
             try {
                 reservation.setIdVehicle(VehicleDAO.findById(bikeTableView.getSelectionModel().getSelectedItem().getId()));
-        reservation.setTotal(ChronoUnit.DAYS.between(new SimpleDateFormat("yyyy-mm-dd").parse(startDate.getValue().toString()).toInstant(), new SimpleDateFormat("yyyy-mm-dd").parse(endDate.getValue().toString()).toInstant())
-                * bikeTableView.getSelectionModel().getSelectedItem().getPricePerDay());
+                reservation.setTotal(ChronoUnit.DAYS.between(new SimpleDateFormat("yyyy-mm-dd").parse(startDate.getValue().toString()).toInstant(), new SimpleDateFormat("yyyy-mm-dd").parse(endDate.getValue().toString()).toInstant())
+                        * bikeTableView.getSelectionModel().getSelectedItem().getPricePerDay());
 
-        BufferedReader bufferedReader = null;
-        String line = "";
-        File file;
-        bufferedReader = new BufferedReader(new FileReader("log.txt"));
-        while ((line = bufferedReader.readLine())!= null ) {
-            reservation.setIdClient(new Client(Integer.valueOf(line)));
+                BufferedReader bufferedReader = null;
+                String line = "";
+                File file;
+                bufferedReader = new BufferedReader(new FileReader("log.txt"));
+                while ((line = bufferedReader.readLine()) != null) {
+                    reservation.setIdClient(new Client(Integer.valueOf(line)));
 
-        }
-        reservationDAO.save(reservation);
+                }
+
+                System.out.println(reservation.toString());
+                reservationDAO.save(reservation);
 
             } catch (SQLException | ParseException | FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -189,7 +189,7 @@ public class ClientPanel extends Application {
             totalPrice.setText(String.valueOf(price));
         });
         primaryStage.setTitle("Client Panel");
-        primaryStage.setScene(new Scene(pane, 1000, 750));
+        primaryStage.setScene(new Scene(pane, 900, 650));
         primaryStage.setResizable(false);
         primaryStage.show();
 

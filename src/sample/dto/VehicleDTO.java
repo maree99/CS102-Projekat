@@ -8,7 +8,9 @@ public class VehicleDTO {
     private Integer id;
 
     public Integer getId() {
+
         return id;
+
     }
 
     public void setId(Integer id) {

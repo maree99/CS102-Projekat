@@ -21,6 +21,8 @@ public class VehicleDAO implements CRUDService<Vehicle> {
 
         return null;
     }
+
+
     public static Vehicle findById(Integer id ) throws SQLException {
         DBConfig.openConection();
         PreparedStatement preparedStatement = DBConfig.connection.prepareStatement("SELECT * FROM vehicle WHERE id = ?");
@@ -58,6 +60,7 @@ public class VehicleDAO implements CRUDService<Vehicle> {
                 vehicle.setPower(resultSet.getDouble(4));
                 vehicle.setPricePerDay(resultSet.getDouble(5));
                 vehicleList.add(vehicle);
+
 
             }
         } catch (SQLException e) {

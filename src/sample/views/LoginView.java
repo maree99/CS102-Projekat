@@ -52,7 +52,8 @@ public class LoginView extends Application {
                 if (authUser.getIdClient().getId() != null) {
                     Platform.runLater(() -> {
                         try {
-                            new ClientView().start(new Stage());
+                            new ClientPanel().start(new Stage());
+                            primaryStage.close();
                             PrintWriter pw = new PrintWriter("log.txt");
                             pw.println(authUser.getIdClient().getId());
                             pw.close();
@@ -64,6 +65,7 @@ public class LoginView extends Application {
                     Platform.runLater(() -> {
                         try {
                             new AdminView().start(new Stage());
+                            primaryStage.close();
                         } catch (Exception exception) {
                             exception.printStackTrace();
                         }

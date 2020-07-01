@@ -7,11 +7,14 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.dao.BikeBrandDAO;
+import sample.dao.VehicleDAO;
+import sample.dto.VehicleDTO;
 import sample.entity.BikeBrand;
 
 
@@ -93,6 +96,16 @@ public class PanelBike extends Application {
 
         bikeTableView.getColumns().addAll(brandTC, modelTC, yearTC, registrationTC);
         bikeTableView.setPrefWidth(500);
+
+
+        ObservableList<VehicleDTO> vehicleDTOList = VehicleDAO.getAllVehicleDTO();
+        bikeTableView.setItems(vehicleDTOList);
+
+        brandTC.setCellValueFactory(new PropertyValueFactory<>("bikeBrandTitle"));
+        modelTC.setCellValueFactory(new PropertyValueFactory<>("bikeModelTitle"));
+        yearTC.setCellValueFactory(new PropertyValueFactory<>("power"));
+        registrationTC.setCellValueFactory(new PropertyValueFactory<>("pricePerDay"));
+
 
         crud.getChildren().addAll(btBrand,edit,view,delete);
         crud.setPadding(new javafx.geometry.Insets(10,10,10,10));

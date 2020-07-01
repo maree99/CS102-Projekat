@@ -2,15 +2,21 @@ package sample.views;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import sample.dao.ReservationDAO;
+import sample.dao.VehicleDAO;
+import sample.dto.ReservationDTO;
+import sample.dto.VehicleDTO;
 
 public class PanelOrder extends Application {
     BorderPane pane = new BorderPane();
@@ -27,8 +33,9 @@ public class PanelOrder extends Application {
 
     TableColumn startTC = new TableColumn("Start Date");
     TableColumn endTC = new TableColumn("End Date");
-    TableColumn clientTC = new TableColumn("Client");
-    TableColumn bikeTC = new TableColumn("Bike");
+    TableColumn clientTC = new TableColumn("Total");
+    TableColumn bikeTC = new TableColumn("Bike Name");
+    TableColumn nameTC = new TableColumn("Client Name");
 
     Button edit = new Button("Edit");
     Button view = new Button("View");
@@ -54,8 +61,21 @@ public class PanelOrder extends Application {
         center.setPadding(new javafx.geometry.Insets(10,10,10,10));
         center.setSpacing(10);
 
-        rezervationTableView.getColumns().addAll(startTC, endTC, clientTC, bikeTC);
+        rezervationTableView.getColumns().addAll(startTC, endTC, clientTC, bikeTC,nameTC);
         rezervationTableView.setPrefWidth(500);
+
+
+
+        ObservableList<ReservationDTO> resercationDTOList = ReservationDAO.getAllReservationDTO();
+        rezervationTableView.setItems(resercationDTOList);
+//        ObservableList<VehicleDTO> vehicleDTOList = VehicleDAO.getAllVehicleDTO();
+//        rezervationTableView.setItems(vehicleDTOList);
+
+        startTC.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+        endTC.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+        clientTC.setCellValueFactory(new PropertyValueFactory<>("client"));
+        bikeTC.setCellValueFactory(new PropertyValueFactory<>("bikeBrandTitle"));
+        nameTC.setCellValueFactory(new PropertyValueFactory<>("bikeBrandTitle"));
 
         crud.getChildren().addAll(edit,view,delete);
         crud.setPadding(new javafx.geometry.Insets(10,10,10,10));

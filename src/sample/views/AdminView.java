@@ -51,9 +51,9 @@ public class AdminView extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-hBox.getChildren().addAll(panelBike,panelClient,panelOrder);
-        hBox.setAlignment(Pos.CENTER);
-hBox.setSpacing(10);
+    hBox.getChildren().addAll(panelBike,panelClient,panelOrder);
+    hBox.setAlignment(Pos.CENTER);
+    hBox.setSpacing(10);
 
 hbNews.getChildren().add(news);
 hbNews.setAlignment(Pos.CENTER);
